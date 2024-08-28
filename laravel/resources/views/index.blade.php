@@ -8,20 +8,20 @@
     <title>Laravel</title>
     @vite('resources/css/app.css')
 </head>
-<body class="bg-slate-800 text-gray-200">
-    <div class="w-screen flex justify-center">
-        <table class="w-9/12 border-2 text-left">
-            <thead>
+<body class="bg-slate-800 text-gray-200 flex justify-center">
+    <div class="rounded-lg w-3/4 flex justify-center mt-8">
+        <table class="shadow-md w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-                <th class="border-2">Sensors</th>
-                <th class="border-2">Temperature</th>
+                <th class="px-6 py-3">Sensors</th>
+                <th class="px-6 py-3">Temperature</th>
             </tr>
             </thead>
             <tbody>
             @foreach($sensors as $sensor)
-                <tr id="sensor-{{$sensor->sensor}}">
-                    <th class="border-2">Sensor {{ $sensor->sensor }}</th>
-                    <th class="border-2">{{ $sensor->temperature }}°C</th>
+                <tr id="sensor-{{$sensor->sensor}}" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                    <th class="px-6 py-4">Sensor {{ $sensor->sensor }}</th>
+                    <th class="px-6 py-4">{{ $sensor->temperature }}°C</th>
                 </tr>
             @endforeach
             </tbody>
